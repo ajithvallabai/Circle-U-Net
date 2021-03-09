@@ -1,0 +1,82 @@
+19/1/2021
+Wrote code for squeeze unet from a paper (first time i transulated a unreleased gitcode and found accuracy) wow!
+
+20/1/2021
+ALso ajith this last paper which is out of office right ? spend more time in office papers okay? thats also good u
+r spending too much time with easier things
+Write inference code - done
+Write accuracy checking code             - done
+Test the speed of squeezenet inference
+Understand why squeezeunet works
+use augumentation - done
+21/1/2021
+Compare with hourglass model, Eff Unet, Squeeze unet , Form a new architecture - best method is to draw and see
+Compare with segnet, see other hour glass models also
+You get 10 days finish it
+0.70 is the target accuracy for camvid - Unet
+There are two things Ajith - HRNEt+hour glass/squeezenet to new model
+                           - Squeezenet to new model
+    both fastness and accuracy should be good
+
+HR-Net
+https://arxiv.org/pdf/1908.07919v2.pdf
+https://github.com/HRNet/HRNet-Semantic-Segmentation
+
+22/1/2021
+
+Training log file should be generated with - dataset name, model name, number of train and val images , training epochs inos - done
+Write code for full camvid testing - done
+Write model predict and generate output - done
+check if mean iou score and mean f1 score is correct or not  with model predict output - important because we would know
+    whether our test is correct or not . -
+
+Ajith finsh all above in this weekend okay ? be fast
+squeezenet , HRNet training with camvid - done
+Original HRNet with LIP dataset - working check the iou with original repo in LIP and in paperswithcode 
+
+Make the new model to get above all accuracies in camvid dataset -
+
+Dont change from UNet - it hard to get world accuacy within a small time, you also dont have gpus- reproduce HRNet then modying HRnet and family
+    of HRNet is the only way
+
+model should be best UNet in this world !! okay ? it should also have the speed
+
+Ajith the percentage of SOTA for human parsing is less because of varying size of images, you can fill black color in it
+    like before
+Squeezenet - having the speed - done
+
+Ajith competitors are - (for camvid)
+PSP net with 0.69
+HRNet with 0.74
+
+23/1/2021
+Testings :
+code is not using GPU - use tensorflow-gpu
+drone - working & speed is good
+camvid_full - test again - do this today -working to a level
+lookintoperon - rewrite code and test
+write color.txt for segmentation after prediction
+
+dont worry about hrnet
+
+
+26/1/2021-
+option 1 -  new hour glass model with speed of inference and training for real time usage  - squeezenet with Unet++ or UnetResNext
+finish above one first today
+New model:
+only 1 max pooling like red net -use attenation gates like Att-net - try - 26/1
+Make ResUnet like how squeeze unet was made from unet
+FeedbackUnet based Squeezenet - try - 26/1
+Adding Enhanced rotation invariant with squeezenet - try - 26/1
+
+Checklist :
+see whether the model is correct with batch normalization , relus
+check DA's
+check learning rates
+
+
+now you have four different models. form it and see which wins use it .
+
+option 2 - above HR net but it should beat HRNet accuracy in LIP
+
+
