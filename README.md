@@ -129,21 +129,6 @@ python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m "res_u
 python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m new_squeezenet  -ht 256 -w 256 -bs 5 --loss CCE --num_epochs 60
 ```
 
-**Tables to be filled***
-
-Model Name 	        |   loss function |val mIOU   |val accuracy | epochs
--------             | --------        | --------  | -------     |  --------- |
-Unet                |	trversky      |           |           |            |
-Attenation UNet     |	trversky	  |      	  |           |             |
-squeeze-Unet        |	trversky      |	          |	          |             |
-Att Sequeeze-Unet   |	trversky      |	          |	          |             |
-Resnet101 Unet      |   trversky      |           |           |     60      |
-Circle net          |  trversky       |           |           |     60      |
-Circle net          |  categorical CE |           |           |     60      |
-Circlenet with atten|  trversky       |           |           |     60      |
-Circlenet with atten|  categorical CE |           |           |     60      |
-
-
 **Evaluating model and predicting images**
     
     python evaluate.py -d "camvid" -idir "dataset/camvid/data/" -mt "squeeze_unet_keras" -m "camvid_model_5_epochs.h5" -ht 256 -w 256
@@ -189,19 +174,9 @@ mIOU - 0.70 is target
 
 ![assets/squeezenet_accuracy.PNG](SqueezeNet)
 
-
 - Drone dataset - 
 
 Any accuracy is fine
-
-- Look into Person dataset -
-
-model	|overall acc.	|mean acc.	|mean IoU|
-------- | --------      | --------  | -------|
-resnet50|	0.792	|0.552	|0.463|
-resnet101|	0.805	|0.579	|0.489|
-densenet121|	0.826|	0.606|	0.519|
-squeezenet|	0.786|	0.543|	0.450|
 
 **Reference for LIP** : https://github.com/hyk1996/Single-Human-Parsing-LIP
 
