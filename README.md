@@ -1,18 +1,25 @@
-## Unet 
+## Circle-U-Net 
 
-### Dataset - 
+This is implementation of Circle U Net for image segmentation
 
-- Camvid
-- ICG - TUGRAZ dataset - http://dronedataset.icg.tugraz.at 
-- Look Into Person Dataset
-- Coco https://github.com/giddyyupp/coco-minitrain
+[Circle-U-Net: An Efficient Architecture for Semantic Segmentation](https://www.mdpi.com/1999-4893/14/6/159/htm) , published in Algorithms Journal 2021
 
-### Installations:
+**Dataset** : [ICG - TUGRAZ dataset](http://dronedataset.icg.tugraz.at)
+
+**Installations**
+
+    tensorflow-gpu==2.1.4
+
+### Schematic Diagram
+
+![Schema](assets/schematic_diagram.JPG)
+
+### Architecture
+
+![Architecture](assets/architecture.JPG)
 
 
-tensorflow-gpu==2.1.4
-
-### Dataset
+### Dataset Tree
 
 ```
 ---dataset
@@ -78,11 +85,7 @@ all other images except in val set
 412,421,438,476,489,507,524,545,567,583,584,585,586,587,588,590,591,592,593,593,594
 
 
-### Running programs
-
-**Training**
-
-Experiments - Feb 2021
+### Training
 
 **Attenation Unet**
 
@@ -115,19 +118,16 @@ Experiments - Feb 2021
 ```python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m "circle_att_101" -ht 256 -w 256 -bs 5 --loss CCE --num_epochs 60 ```
 
 **Attention unet** - Categorical cross entropy
-```
-python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m att_unet -ht 256 -w 256 -bs 5 --loss CCE --num_epochs 60
-```
+
+```python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m att_unet -ht 256 -w 256 -bs 5 --loss CCE --num_epochs 60 ```
 
 **Resunet** - Categorical cross entropy
-```
-python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m "res_unet" -ht 256 -w 256 -bs 5 --loss CCE --num_epochs 60
-```
 
-**Squeezeunet** -CCE
-```
-python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m new_squeezenet  -ht 256 -w 256 -bs 5 --loss CCE --num_epochs 60
-```
+``` python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m "res_unet" -ht 256 -w 256 -bs 5 --loss CCE --num_epochs 60 ```
+
+**Squeezeunet** -CCE 
+
+``` python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m new_squeezenet  -ht 256 -w 256 -bs 5 --loss CCE --num_epochs 60 ```
 
 **Evaluating model and predicting images**
     
@@ -135,10 +135,9 @@ python drone_main.py -d "camvid_small" -idir "dataset/icg_drone/data/" -m new_sq
 
     
 
-### UNet papers - SOTA :
+### Related papers :
 
 - [Growth of Unet](https://paperswithcode.com/method/u-net)
-
 - [Unet - root](https://arxiv.org/pdf/1505.04597.pdf)
 
 Last two years SOTA papers
@@ -160,31 +159,15 @@ ICCV
 - [Reccurent Unets](https://openaccess.thecvf.com/content_ICCV_2019/html/Wang_Recurrent_U-Net_for_Resource-Constrained_Segmentation_ICCV_2019_paper.html)
 - [BCDU-Net](http://openaccess.thecvf.com/content_ICCVW_2019/papers/VRMI/Azad_Bi-Directional_ConvLSTM_U-Net_with_Densley_Connected_Convolutions_ICCVW_2019_paper.pdf) - https://github.com/rezazad68/BCDU-Net
 
-
-
-
 - [GAN based_on UNet](https://openaccess.thecvf.com/content_CVPR_2020/papers/Schonfeld_A_U-Net_Based_Discriminator_for_Generative_Adversarial_Networks_CVPR_2020_paper.pdf)
 - [RUNet for super resolution](https://openaccess.thecvf.com/content_CVPRW_2019/papers/WiCV/Hu_RUNet_A_Robust_UNet_Architecture_for_Image_Super-Resolution_CVPRW_2019_paper.pdf)
 
-### Accuracy to be achieved:
 
-- CamVid -
 
-mIOU - 0.70 is target
+### Cite
 
-![assets/squeezenet_accuracy.PNG](SqueezeNet)
+Please site our paper if you use this code in your own work:
 
-- Drone dataset - 
+Citations: 
 
-Any accuracy is fine
-
-**Reference for LIP** : https://github.com/hyk1996/Single-Human-Parsing-LIP
-
-**Reference for models:**
-
-[Blog 1](https://medium.com/@sunnerli/simple-introduction-about-hourglass-like-model-11ee7c30138)
-
-### Todo
-
-- Make all available UNets in this repo 
-- Create it like a library where you can install and infer on 3 datasets 
+    Sun, Feng, Ajith K. V, Guanci Yang, Ansi Zhang, and Yiyun Zhang. 2021. "Circle-U-Net: An Efficient Architecture for Semantic Segmentation" Algorithms 14, no. 6: 159. https://doi.org/10.3390/a14060159
