@@ -168,6 +168,15 @@ ICCV
 
 Please site our paper if you use this code in your own work:
 
-Citations: 
+```
+@inproceedings{fengsun2021circleunet,
+  title={Circle-U-Net: An Efficient Architecture for Semantic Segmentation},
+  author={Feng Sun, Ajith Kumar V, Guanci Yang, Ansi Zhang, Yiyun Zhang},
+  booktitle={Algorithms},
+  year={2021}
+}
+```
 
-    Sun, Feng, Ajith K. V, Guanci Yang, Ansi Zhang, and Yiyun Zhang. 2021. "Circle-U-Net: An Efficient Architecture for Semantic Segmentation" Algorithms 14, no. 6: 159. https://doi.org/10.3390/a14060159
+```
+Sun F, Yang G, Zhang A, et al. Circle-U-Net: An Efficient Architecture for Semantic Segmentation[J]. Algorithms, 2021, 14(6): 159.
+```
